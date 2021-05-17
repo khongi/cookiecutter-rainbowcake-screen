@@ -1,0 +1,6 @@
+{
+    "screen_name": "HelloWorld",
+    "package_name": "com.example",
+    "directory_name": "{{ cookiecutter.screen_name.lower().replace(' ','')}}",
+    "current_dir": "ui"
+}
