@@ -99,14 +99,25 @@ new_layout_file_name = 'fragment_' + screen_name_splitted + '.xml'
 new_layout_file = os.path.join(layout_dir, new_layout_file_name)
 os.rename(generated_layout_file, new_layout_file)
 
+# Get generated files package name from folder structure
 package_name = get_package_name(current_dir)
+
+# Get app package name from AndroidManifest.xml
+manifest_filepath = find_node(current_dir, 'AndroidManifest.xml', True)
+with open(manifest_filepath, 'r') as f:
+    searchlines = f.readlines()
+for i, line in enumerate(searchlines):
+    if ('package=\"') in line:
+        section_with_app_package = line.split('package=', 1)[1]
+        app_package = section_with_app_package.split('\"', 2)[1]
+
 templates = TemplateLookup(directories=[current_dir], strict_undefined=True)
 
 for subdir, dirs, files in os.walk(current_dir):
     for filename in files:
         # render file content
         template = templates.get_template(filename)
-        rendered = template.render(package_name=package_name)
+        rendered = template.render(package_name=package_name, app_package=app_package)
 
         # save file with modified content
         filepath = os.path.join(subdir, filename)

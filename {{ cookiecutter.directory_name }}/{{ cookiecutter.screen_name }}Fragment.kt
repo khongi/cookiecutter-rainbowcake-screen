@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import co.zsmb.rainbowcake.base.RainbowCakeFragment
-import com.xapt.emr.databinding.Fragment{{ cookiecutter.screen_name }}Binding
+import ${app_package}.databinding.Fragment{{ cookiecutter.screen_name }}Binding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
