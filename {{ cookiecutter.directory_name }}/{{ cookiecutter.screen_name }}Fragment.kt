@@ -1,4 +1,4 @@
-package {{ cookiecutter.package_name }}.{{ cookiecutter.current_dir }}.{{ cookiecutter.directory_name }}
+package ${package_name}
 
 import android.os.Bundle
 import android.view.LayoutInflater

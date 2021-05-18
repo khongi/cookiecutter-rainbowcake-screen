@@ -1,4 +1,4 @@
-package {{ cookiecutter.package_name }}.{{ cookiecutter.current_dir }}.{{ cookiecutter.directory_name }}
+package ${package_name}
 
 import co.zsmb.rainbowcake.base.RainbowCakeViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

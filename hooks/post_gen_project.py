@@ -1,6 +1,8 @@
 import os
 import sys
 from pathlib import Path
+from mako.template import Template
+from mako.lookup import TemplateLookup
 
 def split_on_uppercase(s, keep_contiguous=False):
     """
@@ -59,8 +61,6 @@ def get_package_name(path):
     src_sub_section = os.sep + 'src' + os.sep
     section_after_src = current_dir.split(src_sub_section, 1)[1]
 
-    print(section_after_src)
-
     java_sub_section = os.sep + 'java' + os.sep
     kotlin_sub_section = os.sep + 'kotlin' + os.sep
 
@@ -74,6 +74,11 @@ def get_package_name(path):
         sys.exit(1)
 
     return section_with_package.replace(os.sep,'.')
+
+def save_file(filepath, content):
+    f=open(filepath,'w')
+    f.write(content)
+    f.close()
 
 current_dir = os.getcwd()
 
@@ -95,4 +100,14 @@ new_layout_file = os.path.join(layout_dir, new_layout_file_name)
 os.rename(generated_layout_file, new_layout_file)
 
 package_name = get_package_name(current_dir)
-print(package_name)
+templates = TemplateLookup(directories=[current_dir], strict_undefined=True)
+
+for subdir, dirs, files in os.walk(current_dir):
+    for filename in files:
+        # render file content
+        template = templates.get_template(filename)
+        rendered = template.render(package_name=package_name)
+
+        # save file with modified content
+        filepath = os.path.join(subdir, filename)
+        save_file(filepath, rendered)

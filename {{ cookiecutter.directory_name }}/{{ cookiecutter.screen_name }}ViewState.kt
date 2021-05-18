@@ -1,4 +1,4 @@
-package {{ cookiecutter.package_name }}.{{ cookiecutter.current_dir }}.{{ cookiecutter.directory_name }}
+package ${package_name}
 
 sealed class {{ cookiecutter.screen_name }}ViewState
 
