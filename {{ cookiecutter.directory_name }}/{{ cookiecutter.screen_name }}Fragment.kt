@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import co.zsmb.rainbowcake.base.RainbowCakeFragment
 import ${app_package}.databinding.Fragment{{ cookiecutter.screen_name }}Binding
+{%- if cookiecutter.di == "Hilt" %}
 import dagger.hilt.android.AndroidEntryPoint
-
+{%- endif %}
+{% if cookiecutter.di == "Hilt" %}
 @AndroidEntryPoint
+{%- endif %}
 class {{ cookiecutter.screen_name }}Fragment : RainbowCakeFragment<{{ cookiecutter.screen_name }}ViewState, {{ cookiecutter.screen_name }}ViewModel>() {
 
     private lateinit var binding: Fragment{{ cookiecutter.screen_name }}Binding
