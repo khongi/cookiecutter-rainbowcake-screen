@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 def split_on_uppercase(s, keep_contiguous=False):
@@ -54,6 +55,26 @@ def find_node(start_path, searching_for, is_file=False):
         last_root = current_root
         current_root = os.path.dirname(last_root)
 
+def get_package_name(path):
+    src_sub_section = os.sep + 'src' + os.sep
+    section_after_src = current_dir.split(src_sub_section, 1)[1]
+
+    print(section_after_src)
+
+    java_sub_section = os.sep + 'java' + os.sep
+    kotlin_sub_section = os.sep + 'kotlin' + os.sep
+
+    section_with_package = ''
+    if java_sub_section in section_after_src:
+        section_with_package = section_after_src.split(java_sub_section, 1)[1]
+    elif kotlin_sub_section in section_after_src:
+        section_with_package = section_after_src.split(kotlin_sub_section, 1)[1]
+    else:
+        print('ERROR: not a valid java or kotlin folder structure')
+        sys.exit(1)
+
+    return section_with_package.replace(os.sep,'.')
+
 current_dir = os.getcwd()
 
 # Find resources directory
@@ -72,3 +93,6 @@ screen_name_splitted = '_'.join(split_on_uppercase("{{ cookiecutter.screen_name 
 new_layout_file_name = 'fragment_' + screen_name_splitted + '.xml'
 new_layout_file = os.path.join(layout_dir, new_layout_file_name)
 os.rename(generated_layout_file, new_layout_file)
+
+package_name = get_package_name(current_dir)
+print(package_name)
