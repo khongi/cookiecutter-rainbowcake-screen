@@ -1,5 +1,5 @@
 # cookiecutter-rainbowcake-screen
-A cookiecutter template for generating a RainbowCake screen.
+A cookiecutter template for generating a RainbowCake Fragment boilerplate.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ Install cookiecutter and mako via pip:
 - `pip install --user cookiecutter`
 - `pip install --user mako`
 
-For additional information visit [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/installation.html)
+For additional information visit [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/installation.html).
 
 ## Usage
 
@@ -33,9 +33,6 @@ abbreviations:
 
 Now you can use the template like:
 
-To (re)download the template from github on every use:
-`cookiecutter ghrc`
-
-To use local version of the template:
-`cookiecutter rc`
+- `cookiecutter ghrc` : This will download the template from github.
+- `cookiecutter rc` : If you already downloaded the template.
 
