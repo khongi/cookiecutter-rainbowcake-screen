@@ -1,16 +1,21 @@
 # cookiecutter-rainbowcake-screen
-A cookiecutter template for generating a RainbowCake Fragment boilerplate.
+A cookiecutter template for generating a [RainbowCake](https://rainbowcake.dev/) Fragment boilerplate.
 
 ## Prerequisites
 
 You will need:
 - Python
 - cookiecutter
-- make
+- mako
 
 Install cookiecutter and mako via pip:
 - `pip install --user cookiecutter`
 - `pip install --user mako`
+
+### Windows
+Make sure your user site Scripts directory is added to your PATH.
+
+You can find out where are your user-site packages with `python -m site --user-site`
 
 For additional information visit the [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/installation.html).
 
