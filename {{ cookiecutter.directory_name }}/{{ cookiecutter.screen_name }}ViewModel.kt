@@ -11,4 +11,4 @@ import javax.inject.Inject
 {%+ endif -%}
 class {{ cookiecutter.screen_name }}ViewModel @Inject constructor(
     private val {{ cookiecutter.screen_name[0] | lower }}{{ cookiecutter.screen_name[1:] }}Presenter: {{ cookiecutter.screen_name }}Presenter
-): RainbowCakeViewModel<{{ cookiecutter.screen_name }}ViewState>({{ cookiecutter.screen_name }}Initial)
+) : RainbowCakeViewModel<{{ cookiecutter.screen_name }}ViewState>({{ cookiecutter.screen_name }}Initial)
