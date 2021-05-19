@@ -5,19 +5,38 @@ A cookiecutter template for generating a [RainbowCake](https://rainbowcake.dev/)
 
 You will need:
 - Python
-- cookiecutter
+- cookiecutter (at least 2.0.0 on Windows)
 - mako
 
 Install cookiecutter and mako via pip:
 - `pip install --user cookiecutter`
 - `pip install --user mako`
 
-### Windows
 Make sure your user site Scripts directory is added to your PATH.
+You can find out where are your user-site packages with:
 
-You can find out where are your user-site packages with `python -m site --user-site`
+`python -m site --user-site`
 
 For additional information visit the [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/installation.html).
+
+### Windows
+There is a line endings issue on Windows if you use the cookiecutter version below 2.0.0.
+As of writing this, the [2.0.0 version](https://github.com/cookiecutter/cookiecutter/issues/1555) is not released yet but you can install it from git with few lines.
+
+1. Uninstall your current version if your already have it installed
+```Bash
+pip uninstall cookiecutter
+```
+2. Clone cookiecutter
+```Bash
+git clone https://github.com/cookiecutter/cookiecutter.git
+```
+3. Setup cookiecutter
+```Bash
+python -m virtualenv cookiecutter
+cd cookiecutter/
+python setup.py develop
+```
 
 ## Usage
 
