@@ -46,13 +46,45 @@ Execute the following command in your *ui* package directory:
 
 `cookiecutter https://github.com/khongi/cookiecutter-rainbowcake-screen.git`
 
-You will be promped to enter a screen name.
-If you want a fragment with the name MyExampleFragment, you should enter **MyExample**.
-Make sure to use **P**ascal**C**ase as the generated file names, directories and file contents are dependent on it.
+You will be promped to enter a few information about the screen.
 
-You can make the command shorter with `.cookiecutterrc` file.
+```
+screen_name [HelloWorld]:
+```
 
-Create a `.cookiecutterrc` file in your home directory with the content:
+* If you want a fragment with the name MyExampleFragment, you should enter **MyExample**.
+* Make sure to use **P**ascal**C**ase as the generated content depends on it.
+
+```
+directory_name [helloworld]:
+```
+
+* This is the folder under which the Fragment and associated files will be generated.
+
+```
+Select di:
+1 - Hilt
+2 - Dagger 2
+Choose from 1, 2 [1]:
+```
+
+* Choosing Hilt will add @AndroidEntryPoint and @HiltViewModel annotations
+
+```
+Select view_reference:
+1 - ViewBinding
+2 - Synthetics
+Choose from 1, 2 [1]:
+```
+
+* Choosing ViewBinding will inflate the binding in `onCreateView`
+* Choosing Synthetics will result in overriding `getViewResource` with the layout file
+
+### Customizing
+
+You can make the command shorter by creating a `.cookiecutterrc` file.
+
+Make `.cookiecutterrc` file in your home directory with the content:
 ```yaml
 abbreviations:
     ghrc: https://github.com/khongi/cookiecutter-rainbowcake-screen.git
