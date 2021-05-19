@@ -82,9 +82,9 @@ Choose from 1, 2 [1]:
 
 ### Customizing
 
-You can make the command shorter by creating a `.cookiecutterrc` file.
+You can make the command shorter by creating a `.cookiecutterrc` file (follows YAML syntax).
 
-Make `.cookiecutterrc` file in your home directory with the content:
+Make `.cookiecutterrc` file in your home directory and add the following section:
 ```yaml
 abbreviations:
     ghrc: https://github.com/khongi/cookiecutter-rainbowcake-screen.git
@@ -96,3 +96,10 @@ Now you can use the template like:
 - `cookiecutter ghrc` : This will download the template from github.
 - `cookiecutter rc` : If you already downloaded the template.
 
+You can also change the default values of the prompt:
+```yaml
+default_context:
+    di: "Dagger 2"
+```
+
+Now the default di option will be Dagger 2
