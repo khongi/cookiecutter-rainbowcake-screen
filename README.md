@@ -20,7 +20,7 @@ You can find out where are your user-site packages with:
 For additional information visit the [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/installation.html).
 
 ### Windows
-There is a line endings issue on Windows if you use the cookiecutter version below 2.0.0.
+There is a line endings [issue](https://github.com/cookiecutter/cookiecutter/issues/405) on Windows if you use the cookiecutter version below 2.0.0.
 As of writing this, the [2.0.0 version](https://github.com/cookiecutter/cookiecutter/issues/1555) is not released yet but you can install it from git with few lines.
 
 1. Uninstall your current version if your already have it installed
