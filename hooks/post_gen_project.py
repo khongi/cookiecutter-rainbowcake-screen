@@ -95,7 +95,8 @@ Path(layout_dir).mkdir(parents=True, exist_ok=True)
 
 # Move generated layout file to layout directory with proper name
 screen_name_splitted = '_'.join(split_on_uppercase("{{ cookiecutter.screen_name }}")).lower()
-new_layout_file_name = 'fragment_' + screen_name_splitted + '.xml'
+new_layout_name = 'fragment_' + screen_name_splitted
+new_layout_file_name = new_layout_name + '.xml'
 new_layout_file = os.path.join(layout_dir, new_layout_file_name)
 os.rename(generated_layout_file, new_layout_file)
 
@@ -117,7 +118,11 @@ for subdir, dirs, files in os.walk(current_dir):
     for filename in files:
         # render file content
         template = templates.get_template(filename)
-        rendered = template.render(package_name=package_name, app_package=app_package)
+        rendered = template.render(
+            package_name=package_name, 
+            app_package=app_package, 
+            layout_name=new_layout_name
+        )
 
         # save file with modified content
         filepath = os.path.join(subdir, filename)

@@ -1,5 +1,6 @@
 {
     "screen_name": "HelloWorld",
     "directory_name": "{{ cookiecutter.screen_name.lower().replace(' ','')}}",
-    "di": ["Hilt", "Dagger 2"]
+    "di": ["Hilt", "Dagger 2"],
+    "view_reference": ["ViewBinding", "Synthetics"]
 }
