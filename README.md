@@ -1,5 +1,5 @@
 # cookiecutter-rainbowcake-screen
-A cookiecutter template for generating a [RainbowCake](https://rainbowcake.dev/) Fragment boilerplate.
+A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for generating a [RainbowCake](https://rainbowcake.dev/) Fragment boilerplate.
 
 ## Prerequisites
 
