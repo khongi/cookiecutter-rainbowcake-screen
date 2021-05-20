@@ -33,9 +33,15 @@ git clone https://github.com/cookiecutter/cookiecutter.git
 ```
 3. Setup cookiecutter
 ```Bash
+pip install virtualenv
 python -m virtualenv cookiecutter
 cd cookiecutter/
 python setup.py develop
+```
+
+4. Make sure LF line endings doesn't get converted into CRLF
+```
+git config --global core.autocrlf input
 ```
 
 ## Usage
