@@ -25,23 +25,23 @@ import ${app_package}.R
 @AndroidEntryPoint
 {%- endif %}
 class {{ cookiecutter.screen_name }}Fragment : RainbowCakeFragment<{{ cookiecutter.screen_name }}ViewState, {{ cookiecutter.screen_name }}ViewModel>() {
-    {%- if cookiecutter.view_reference == "ViewBinding" +%}
+    {%- if cookiecutter.view_reference == "ViewBinding" %}
 
     private lateinit var binding: Fragment{{ cookiecutter.screen_name }}Binding
     {%- endif -%}
 
-    {%- if cookiecutter.di == "Hilt" +%}
+    {%- if cookiecutter.di == "Hilt" %}
 
     override fun provideViewModel() = viewModels<{{ cookiecutter.screen_name }}ViewModel>().value
-    {%- elif cookiecutter.di == "Dagger 2" +%}
+    {%- elif cookiecutter.di == "Dagger 2" %}
 
     override fun provideViewModel() = getViewModelFromFactory()
     {%- endif %}
-    {%- if cookiecutter.view_reference == "Synthetics" +%}
+    {%- if cookiecutter.view_reference == "Synthetics" %}
 
     override fun getViewResource() = R.layout.${layout_name}
     {%- endif %}
-    {%- if cookiecutter.view_reference == "ViewBinding" +%}
+    {%- if cookiecutter.view_reference == "ViewBinding" %}
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,7 +1,7 @@
 package ${package_name}
 
 import co.zsmb.rainbowcake.base.RainbowCakeViewModel
-{%- if cookiecutter.di == "Hilt" +%}
+{%- if cookiecutter.di == "Hilt" %}
 import dagger.hilt.android.lifecycle.HiltViewModel
 {%- endif %}
 import javax.inject.Inject
